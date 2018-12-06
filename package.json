@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.11.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3"
   },
   "scripts": {
-    "webpack-server-dev" : "webpack-dev-server --mode development --open --content-base ./dist",
-    "webpack-server-build" : "",
+    "webpack-server-dev": "webpack-dev-server --mode development --open --content-base ./dist",
+    "webpack-server-build": "",
     "start": "yarn run webpack-server-dev",
     "build": "yarn run webpack"
   },
