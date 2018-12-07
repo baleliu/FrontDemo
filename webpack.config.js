@@ -9,6 +9,7 @@ module.exports = {
     // 输出到dist文件夹, 文件名字为bundle.js
     output: {
         filename: '[name].js',
+        chunkFilename: '[name].chunk.js',
         path: path.join(__dirname, 'dist'),
     },
     mode: 'production', //可选值有：production development
@@ -19,14 +20,11 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-react']
-                    }
-
                 }
             },
             {
                 test: /\.css$/,
+                exclude: /(node_modules|bower_components)/,
                 use: [{
                     loader: 'style-loader'
                 }, {
@@ -36,6 +34,19 @@ module.exports = {
                         localIdentName:"[path][name]-[local]-[hash:base64:5]"
                     }
                 }]
+            },
+            {
+                test:/\.css$/,
+                exclude:/src/,
+                use:[
+                    { loader: "style-loader",},
+                    {
+                        loader: "css-loader",
+                        options:{
+                            importLoaders:1
+                        }
+                    }
+                ]
             },
             {
                 test: /\.(png|jpg|gif|svg)$/,
@@ -55,7 +66,7 @@ module.exports = {
                 template: './public/index.html',
                 filename: 'index.html'
             }
-        )
+        ),
     ],
     devServer: {
         inline:true,

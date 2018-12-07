@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/runtime": "^7.2.0",
     "antd": "^3.11.0",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1"
   },
   "scripts": {
     "webpack-server-dev": "webpack-dev-server --mode development --open --content-base ./dist",
-    "webpack-server-build": "",
+    "webpack-server-prod": "",
     "start": "yarn run webpack-server-dev",
     "build": "yarn run webpack"
   },
@@ -24,10 +27,21 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-sent": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
+    "babel-plugin-import": "^1.11.0",
     "css-loader": "^1.0.1",
+    "eslint": "^5.9.0",
     "html-webpack-plugin": "^3.2.0",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
