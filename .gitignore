@@ -11,6 +11,7 @@
 # production
 /build
 /dist
+yarn.lock
 
 # misc
 .DS_Store
