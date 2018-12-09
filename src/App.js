@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import style from './App.css';
 import {DatePicker} from 'antd';
 import {Tree} from 'antd';
+import pe from './print';
 
 const { TreeNode } = Tree;
 
@@ -19,6 +20,7 @@ class App extends Component {
         return (
             <div>
                 <div>
+                    {pe()}
                     <DatePicker/>
                     <Tree
                         checkable

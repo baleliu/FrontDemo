@@ -1,5 +1,6 @@
 {
   "name": "react-demo",
+  "sideEffects": false,
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,10 +12,11 @@
     "redux": "^4.0.1"
   },
   "scripts": {
-    "webpack-server-dev": "webpack-dev-server --mode development --open --content-base ./dist",
-    "webpack-server-prod": "",
+    "webpack-server-dev": "webpack-dev-server --mode development --open --config ./webpack/webpack.dev.js",
     "start": "yarn run webpack-server-dev",
-    "build": "yarn run webpack"
+    "build": "yarn run build-dev",
+    "build-dev": "yarn run webpack --config ./webpack/webpack.dev.js",
+    "build-prod": "yarn run webpack --config ./webpack/webpack.prod.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,13 +42,17 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-import": "^1.11.0",
+    "clean-webpack-plugin": "^1.0.0",
     "css-loader": "^1.0.1",
     "eslint": "^5.9.0",
     "html-webpack-plugin": "^3.2.0",
     "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.0.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.23.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10"
+    "webpack-dev-server": "^3.1.10",
+    "webpack-manifest-plugin": "^2.0.4",
+    "webpack-merge": "^4.1.4"
   }
 }

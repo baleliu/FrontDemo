@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -13,7 +12,7 @@ module.exports = {
     // 输出到dist文件夹, 文件名字为bundle.js
     output: {
         filename: '[name].bundle.js',
-        chunkFilename: '[name].chunk.js',
+        chunkFilename: '[name].bundle.js',
         path: path.join(__dirname, 'dist'),
     },
     mode: 'production', //可选值有：production development
@@ -66,11 +65,6 @@ module.exports = {
         ]
     },
     plugins: [
-        // 查看打包输出情况
-        new ManifestPlugin({
-            // 没什么实际含义
-            basePath: '/app/',
-        }),
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
                 template: './public/index.html',
@@ -79,11 +73,4 @@ module.exports = {
         ),
         new webpack.HotModuleReplacementPlugin()
     ],
-    devtool: 'inline-source-map',
-    devServer: {
-        inline:true,
-        port: 8000,
-        contentBase: './dist',
-        hot: true
-    }
 }
