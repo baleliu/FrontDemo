@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const webpack = require('webpack');
 
 module.exports = {
     // 入口文件
@@ -34,19 +33,19 @@ module.exports = {
                     loader: 'css-loader',
                     options: {
                         modules: true,
-                        localIdentName:"[path][name]-[local]-[hash:base64:5]"
+                        localIdentName: "[path][name]-[local]-[hash:base64:5]"
                     }
                 }]
             },
             {
-                test:/\.css$/,
-                exclude:/src/,
-                use:[
-                    { loader: "style-loader",},
+                test: /\.css$/,
+                exclude: /src/,
+                use: [
+                    {loader: "style-loader",},
                     {
                         loader: "css-loader",
-                        options:{
-                            importLoaders:1
+                        options: {
+                            importLoaders: 1
                         }
                     }
                 ]
@@ -71,6 +70,5 @@ module.exports = {
                 filename: 'index.html'
             }
         ),
-        new webpack.HotModuleReplacementPlugin()
     ],
 }
