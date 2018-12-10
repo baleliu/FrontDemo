@@ -8,6 +8,7 @@
   "dependencies": {
     "@babel/runtime": "^7.2.0",
     "antd": "^3.11.0",
+    "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-redux": "^6.0.0",
@@ -19,7 +20,9 @@
     "start-e": "electron . --env dev",
     "build": "yarn run build-dev",
     "build-dev": "yarn run webpack --config ./webpack/webpack.dev.js",
-    "build-prod": "yarn run webpack --config ./webpack/webpack.prod.js"
+    "build-prod": "yarn run webpack --config ./webpack/webpack.prod.js",
+    "build-e-dev": "yarn run build-dev && electron . --env build",
+    "build-e-prod": "yarn run build-prod && electron . --env build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -50,6 +53,7 @@
     "electron": "^3.0.10",
     "eslint": "^5.9.0",
     "html-webpack-plugin": "^3.2.0",
+    "redux-devtools": "^3.4.2",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "url-loader": "^1.1.2",

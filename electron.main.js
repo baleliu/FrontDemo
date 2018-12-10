@@ -1,7 +1,7 @@
 const { app, BrowserWindow } = require('electron');
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-const { join } = require('path'); 'path';
+const { join } = require('path');
 const { format } =require('url');
 
 const build = /build/.test(process.argv[3]) && /--env/.test(process.argv[2]);
@@ -15,7 +15,7 @@ function createWindow() {
 
     if (build){
         win.loadURL(format({
-            pathname: join(__dirname, './dist/app.bundle.html'),
+            pathname: join(__dirname, './dist/index.html'),
             protocol: 'file:',
             slashes: true
         }))

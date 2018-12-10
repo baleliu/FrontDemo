@@ -66,9 +66,8 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-                template: './public/index.html',
-                filename: 'index.html'
-            }
-        ),
+            template: './public/index.html',
+            filename: 'index.html'
+        }),
     ],
-}
+};
