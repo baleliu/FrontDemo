@@ -12,7 +12,8 @@ module.exports = merge(common, {
         inline:true,
         port: 8000,
         contentBase: './dist',
-        hot: true
+        hot: true,
+        historyApiFallback: true
     },
     plugins: [
         // 查看打包输出情况
