@@ -16,7 +16,7 @@
     "redux": "^4.0.1"
   },
   "scripts": {
-    "webpack-server-dev": "webpack-dev-server --open --config ./webpack/webpack.dev.js",
+    "webpack-server-dev": "webpack-dev-server --open --config ./webpack/webpack.dev.server.js",
     "start": "yarn run webpack-server-dev",
     "start-e": "electron . --env dev",
     "build": "yarn run build-dev",

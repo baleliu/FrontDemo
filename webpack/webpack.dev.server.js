@@ -1,21 +1,21 @@
 const merge = require('webpack-merge');
 const common = require('../webpack.common.js');
+const ManifestPlugin = require('webpack-manifest-plugin');
 const webpack = require('webpack');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const mode= 'production';
+const mode= 'development';
 
 module.exports = merge(common, {
     mode: mode,
-    devtool: 'source-map',
+    devtool: 'inline-source-map',
     plugins: [
-        new CleanWebpackPlugin(['dist']),
+        // 查看打包输出情况
+        new ManifestPlugin({
+            // 没什么实际含义
+            basePath: '/app/',
+        }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(mode)
         }),
-        new UglifyJSPlugin({
-            sourceMap: true
-        })
     ]
 });
