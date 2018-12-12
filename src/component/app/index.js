@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import logo from '../../logo.svg';
-import style from './App.css';
+import style from './style.css';
 
 export default class Index extends Component {
     render() {
